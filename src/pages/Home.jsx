@@ -1,14 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Header from "../components/Header";
+// import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div>
-      <Header />
-      <Link to="/list">
-        <p>List characters</p>
-      </Link>
+      <h1>Home</h1>
     </div>
   );
 };
