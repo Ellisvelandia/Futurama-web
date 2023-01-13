@@ -6,15 +6,15 @@ import logo from "../assets/bender.png";
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <nav className="sticky top-0 w-full h-20 flex justify-between items-center px-8 py-4 shadow-md">
-      <div className="flex justify-center w-full items-center">
+    <nav className="sticky top-0 w-full h-20 flex justify-between items-center px-4 py-4 shadow-md z-10">
+      <div className="flex justify-start w-full items-center">
         <img
           src={logo}
           alt="app logo"
-          className="w-[150px] h-28 p-4 invisible md:visible"
+          className="w-[150px] h-28 p-4"
         />
       </div>
-      <ul className="flex flex-1 items-center justify-end font-black text-white capitalize text-xl invisible md:visible drop-shadow-lg shadow-black sepia hover:sepia-0">
+      <ul className="flex flex-1 items-center w-full justify-end font-black text-white capitalize text-xl invisible md:visible drop-shadow-lg shadow-black">
         <li className="mx-2">
           <Link to="/" className="hover:text-[#459ED3]">
             Home

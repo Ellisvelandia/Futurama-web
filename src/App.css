@@ -8,6 +8,24 @@
 }
 
 body {
-  background-color: #a6c1d6;
+  background-color: rgb(168, 194, 215);
   font-family: "Playfair Display", serif;
+}
+
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.without {
+  height: calc(100vh - 80px);
+}
+
+.logo {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
 }

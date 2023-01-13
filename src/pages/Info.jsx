@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
+import poster from "../assets/poster.jpg";
 
 const Info = () => {
   const [info, setInfo] = useState([]);
@@ -22,8 +23,8 @@ const Info = () => {
             <span className="text-white font-black text-4xl text-center ">
               synopsis
             </span>
-            <img src="https://wallpaperaccess.com/full/6092291.jpg" alt="poster" className="-z-10 md:-mt-6 md:-mb-8 my-4 w-full px-2 md:p-20"/>
-            <p className="md:object-fill object-contain h-full md:-mt-6 md:-mb-8 my-4 px-2 md:p-20 w-full text-justify">
+            <img src={poster} alt="poster" className="rounded md:-mt-6 md:-mb-8 my-4 w-full px-2 md:p-20"/>
+            <p className="md:object-fill object-contain md:-mt-6 md:-mb-8 my-4 px-2 md:p-20 w-full text-justify -h-56">
               {data.synopsis}
             </p>
             <span>yearsAired: {data.yearsAired}</span>
