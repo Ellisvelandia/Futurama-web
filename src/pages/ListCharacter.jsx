@@ -15,9 +15,7 @@ const ListCharacter = () => {
     getFuturama();
   }, []);
 
-  return (
-   <ListCard spaces={spaces}/>
-  );
+  return <ListCard spaces={spaces} />;
 };
 
 export default ListCharacter;

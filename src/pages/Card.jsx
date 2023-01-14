@@ -23,20 +23,20 @@ const Card = () => {
 
   return (
     <>
-      <section className="w-full h-full md:mt-20 mt-8 flex justify-center items-center">
-        <div className="grid grid-cols-1 p-4 md:grid-cols-2 place-items-center">
-          <div className="md:w-3/4">
+      <section className="grid place-content-center without media">
+        <div className="grid grid-cols-1 h-full md:grid-cols-2 place-items-center lg:px-48">
+          <div className="w-full flex h-[400px] justify-center mt-4">
             {character.images && (
               <motion.img
                 src={`${character.images.main}`}
                 alt={character.id}
-                className="rounded-lg md:h-400px h-250px object-cover"
+                className="rounded-lg w-[300px] object-fill"
                 initial={{ opacity: 0, y: "-100vh" }}
                 animate={{ opacity: 1, y: 0 }}
               />
             )}
           </div>
-          <div className="w-full md:my-8">
+          <div className="sm:mx-0 m-4 h-[350px]">
             {character.name && (
               <h1 className=" text-5xl font-bold text-white my-1 md:mb-8 md:text-6xl">
                 {character.name.first} {character.name.middle}{" "}
@@ -50,10 +50,10 @@ const Card = () => {
               Gender: {character.gender}
             </p>
             <p className="text-gray-100 md:my-1 -my-2  text-2xl md:text-4xl leading-loose md:leading-relaxed">
-              Homeplanet: {character.homePlanet}
+              Homeplanet: {character.homePlanet || "unknown"}
             </p>
             <p className="text-gray-100 md:my-1 -my-2  text-2xl md:text-4xl leading-loose md:leading-relaxed">
-              Occupation: {character.occupation}
+              Occupation: {character.occupation || "unknown"}
             </p>
           </div>
           <Link
