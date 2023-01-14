@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
+const widthAnimation = {
+  initial: { width: 0 },
+  animate: { width: "100%" },
+  exit: { width: "100%", x: window.innerWidth },
+};
+
 const Card = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
@@ -23,7 +29,14 @@ const Card = () => {
 
   return (
     <>
-      <section className="grid place-content-center without media">
+      <motion.section
+        transition={{ ease: "easeInOut", duration: 0.5 }}
+        variants={widthAnimation}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="grid place-content-center without media"
+      >
         <div className="grid grid-cols-1 h-full md:grid-cols-2 place-items-center lg:px-48">
           <div className="w-full flex h-[400px] justify-center mt-4">
             {character.images && (
@@ -63,7 +76,7 @@ const Card = () => {
             &larr; Back
           </Link>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

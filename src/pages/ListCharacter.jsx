@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ListCard from "../components/ListCard";
+import PageTransition from "../components/PageTransition";
 
 const ListCharacter = () => {
   const [spaces, setSpaces] = useState([]);
@@ -15,7 +16,11 @@ const ListCharacter = () => {
     getFuturama();
   }, []);
 
-  return <ListCard spaces={spaces} />;
+  return (
+    <PageTransition>
+      <ListCard spaces={spaces} />;
+    </PageTransition>
+  );
 };
 
 export default ListCharacter;
