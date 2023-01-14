@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useTransform, useMotionValue } from "framer-motion";
 
 const widthAnimation = {
-  initial: { width: 0 },
+  initial: { width: 0.8 },
   animate: { width: "100%" },
   exit: { width: "100%", x: window.innerWidth },
 };
 
 const Card = () => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useTransform(y, [-100, 100], [30, -30]);
+  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
+
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 
@@ -30,14 +35,21 @@ const Card = () => {
   return (
     <>
       <motion.section
-        transition={{ ease: "easeInOut", duration: 0.7 }}
+        transition={{ ease: "easeInOut", duration: 0.1 }}
         variants={widthAnimation}
         initial="initial"
         animate="animate"
         exit="exit"
-        className="grid place-content-center without media"
+        className="grid place-content-center without media md:p-12"
+        style={{ perspective: 10000 }}
       >
-        <div className="grid grid-cols-1 h-full md:grid-cols-2 place-items-center lg:px-48">
+        <motion.div
+          style={{ x, y, rotateX, rotateY, z: 10 }}
+          drag
+          dragElastic={0.18}
+          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          className="grid grid-cols-1 h-full md:grid-cols-2 place-items-center md:px-8 shadow rounded my-4"
+        >
           <div className="w-full flex h-[400px] justify-center mt-4">
             {character.images && (
               <motion.img
@@ -49,7 +61,7 @@ const Card = () => {
               />
             )}
           </div>
-          <div className="sm:mx-0 m-4 h-[350px]">
+          <div className="sm:mx-0 m-4">
             {character.name && (
               <h1 className=" text-5xl font-bold text-white my-1 md:mb-8 md:text-6xl">
                 {character.name.first} {character.name.middle}{" "}
@@ -75,7 +87,7 @@ const Card = () => {
           >
             &larr; Back
           </Link>
-        </div>
+        </motion.div>
       </motion.section>
     </>
   );

@@ -12,7 +12,6 @@ const Info = () => {
       const res = await fetch("https://api.sampleapis.com/futurama/info");
       const data = await res.json();
       setInfo(data);
-      console.log(data);
     };
 
     getData();
@@ -43,7 +42,9 @@ const Info = () => {
               <span>yearsAired: {data.yearsAired}</span>
               <hr className="mt-4" />
               <span className="my-1 text-6xl font-black">creators</span>
-              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full place-content-center mt-8">
+              <div
+                className="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full place-content-center mt-8"
+              >
                 {data.creators.map((creator, index) => (
                   <div
                     key={authors[index].id}

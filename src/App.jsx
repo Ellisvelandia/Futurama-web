@@ -1,11 +1,8 @@
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./pages/Home";
-import ListCharacter from "./pages/ListCharacter";
-import Card from "./pages/Card";
-import Info from "./pages/Info";
 import { AnimatePresence } from "framer-motion";
+import { Card, Home, Info, ListCharacter } from "./pages";
 import "./App.css";
 
 const App = () => {

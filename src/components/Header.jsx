@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import logo from "../assets/bender.png";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -15,21 +16,21 @@ const Header = () => {
         />
       </div>
       <ul className="flex flex-1 items-center w-full justify-end font-black text-white capitalize text-xl invisible md:visible drop-shadow-lg shadow-black">
-        <li className="mx-2">
+        <motion.li whileHover={{ scale: 1.1 }} className="mx-2">
           <Link to="/" className="hover:text-[#459ED3]">
             Home
           </Link>
-        </li>
-        <li className="mx-2">
+        </motion.li>
+        <motion.li className="mx-2" whileHover={{ scale: 1.1 }}>
           <Link to="/info" className="hover:text-[#459ED3]">
             synopsis
           </Link>
-        </li>
-        <li className="mx-2">
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.1 }} className="mx-2">
           <Link to="/list" className="hover:text-[#459ED3]">
             Characters
           </Link>
-        </li>
+        </motion.li>
       </ul>
       <div className="md:hidden">
         <img src={logo} alt="" className="absolute left-0 top-0 w-24 h-20" />
