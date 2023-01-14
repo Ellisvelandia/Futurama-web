@@ -15,9 +15,13 @@ const Home = () => {
         type="video/mp4"
         loop
         controls={false}
-        className="object-fill h-full w-full -h-20"
+        playsInline
+        className="md:object-fill inset-1 object-cover h-full w-full z-10"
       />
-      <div className="absolute inset-0 flex__center" style={{  background: "rgba(0,0,0,0.40)"}}>
+      <div
+        className="absolute inset-0 flex__center"
+        style={{ background: "rgba(0,0,0,0.40)" }}
+      >
         <div
           className="w-full h-full rounded-md border-solid border-[#a6c1d6] flex__center"
           onClick={() => {
@@ -30,13 +34,22 @@ const Home = () => {
           }}
         >
           {playVideo ? (
-            <BsPauseFill color="#fff" fontSize={80} className="cursor-pointer"/>
+            <BsPauseFill
+              color="#fff"
+              fontSize={80}
+              className="cursor-pointer"
+            />
           ) : (
             <div>
-              <img src={logo} alt="futurama" className="logo"/>
-            <BsFillPlayFill color="#fff" fontSize={80} className="cursor-pointer" />
+              <img src={logo} alt="futurama" className="logo" loading="lazy" />
+              <BsFillPlayFill
+                color="#fff"
+                fontSize={80}
+                className="cursor-pointer"
+              />
             </div>
           )}
+          
         </div>
       </div>
     </div>

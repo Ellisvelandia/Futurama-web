@@ -22,7 +22,7 @@ const Header = () => {
         </li>
         <li className="mx-2">
           <Link to="/info" className="hover:text-[#459ED3]">
-          synopsis
+            synopsis
           </Link>
         </li>
         <li className="mx-2">
@@ -32,7 +32,7 @@ const Header = () => {
         </li>
       </ul>
       <div className="md:hidden">
-        <img src={logo} alt="" className="absolute left-0 top-0 w-24 h-20"/>
+        <img src={logo} alt="" className="absolute left-0 top-0 w-24 h-20" />
         <GiHamburgerMenu
           color="#fff"
           fontSize={27}
@@ -40,21 +40,36 @@ const Header = () => {
           onClick={() => setToggleMenu(!toggleMenu)}
         />
         {toggleMenu && (
-          <div className="menu w-full h-screen" style={{  background: "rgba(0,0,0,0.80)"}} onClick={() => setToggleMenu(false)}>
+          <div
+            className="menu w-full h-screen"
+            style={{ background: "rgba(0,0,0,0.80)" }}
+            onClick={() => setToggleMenu(false)}
+          >
             <ul className="font-black text-white capitalize text-2xl menu py-4">
-              <img src="http://theinfosphere.org/images/4/40/Planet_Express_Logo.png" alt="logoexpress" className="h-28"/>
+              <img
+                src="http://theinfosphere.org/images/4/40/Planet_Express_Logo.png"
+                alt="logoexpress"
+                className="h-28"
+                loading="lazy"
+              />
               <li className="mx-2">
                 <Link to="/" className="hover:text-[#459ED3] cursor-pointer">
                   Home
                 </Link>
               </li>
               <li className="mx-2">
-                <Link to="/info" className="hover:text-[#459ED3] cursor-pointer">
+                <Link
+                  to="/info"
+                  className="hover:text-[#459ED3] cursor-pointer"
+                >
                   synopsis
                 </Link>
               </li>
               <li className="mx-2">
-                <Link to="/list" className="hover:text-[#459ED3] cursor-pointer">
+                <Link
+                  to="/list"
+                  className="hover:text-[#459ED3] cursor-pointer"
+                >
                   Characters
                 </Link>
               </li>

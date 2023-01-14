@@ -18,6 +18,7 @@ const ListCard = ({ spaces }) => {
               src={space.images.main}
               alt={space.id}
               className="w-60 h-60 mx-auto"
+              loading="lazy"
             />
           </Link>
         ))}

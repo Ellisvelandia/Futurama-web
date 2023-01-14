@@ -33,6 +33,7 @@ const Info = () => {
               src={poster}
               alt="poster"
               className="rounded md:-mt-6 md:-mb-8 my-4 w-full px-2 md:px-20 md:pt-20"
+              loading="lazy"
             />
             <p className="md:object-fill object-contain md:-mt-6 md:-mb-8 my-4 px-2 md:p-20 w-full text-justify -h-56">
               {data.synopsis}
@@ -57,6 +58,7 @@ const Info = () => {
                       src={authors[index].image}
                       alt={authors[index].id}
                       className="w-96 my-2 rounded-full"
+                      loading="lazy"
                     />
                     <p className="text-justify h-full">{authors[index].description}</p>
                   </div>
