@@ -30,7 +30,7 @@ const Card = () => {
   return (
     <>
       <motion.section
-        transition={{ ease: "easeInOut", duration: 0.5 }}
+        transition={{ ease: "easeInOut", duration: 0.7 }}
         variants={widthAnimation}
         initial="initial"
         animate="animate"
