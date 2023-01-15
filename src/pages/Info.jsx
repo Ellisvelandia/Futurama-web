@@ -18,7 +18,7 @@ const Info = () => {
   }, []);
   return (
     <PageTransition>
-      <div className="relative w-full flex justify-center mt-8">
+      <div className="relative w-full flex justify-center mt-8 snap-both">
         {info.map((data) => {
           return (
             <div
