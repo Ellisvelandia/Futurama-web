@@ -5,7 +5,12 @@ const Home = () => {
   return (
     <PageTransition>
       <div className="relative without">
-        <Video />
+        <div
+          className="w-full h-full object-fill flex__center"
+          style={{ background: "rgba(0,0,0,0.40)" }}
+        >
+          <Video />
+        </div>
       </div>
     </PageTransition>
   );
