@@ -48,7 +48,7 @@ const Card = () => {
           drag
           dragElastic={0.18}
           dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          className="grid grid-cols-1 h-full md:grid-cols-2 place-items-center md:px-8 shadow rounded my-4"
+          className="grid grid-cols-1 h-full md:grid-cols-2 place-items-center md:px-8 shadow rounded my-4 hover:bg-[#459ED3]"
         >
           <div className="w-full flex h-[400px] justify-center mt-4">
             {character.images && (

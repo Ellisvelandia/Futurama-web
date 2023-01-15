@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import poster from "../assets/poster.jpg";
+import poster from "../assets/posterinfo.jpg";
 import { authors } from "../data/images";
 import PageTransition from "../components/PageTransition";
 
@@ -32,8 +32,8 @@ const Info = () => {
               </h1>
               <img
                 src={poster}
-                alt="poster"
-                className="rounded md:-mt-6 md:-mb-8 my-4 w-full px-2 md:px-20 md:pt-20"
+                alt="posterinfo"
+                className="md:-mt-6 md:-mb-8 my-4 w-full px-2 md:px-20 md:pt-20"
                 loading="lazy"
               />
               <p className="md:object-fill object-contain md:-mt-6 md:-mb-8 my-4 px-2 md:p-20 w-full text-justify -h-56">
@@ -42,16 +42,14 @@ const Info = () => {
               <span>yearsAired: {data.yearsAired}</span>
               <hr className="mt-4" />
               <span className="my-1 text-6xl font-black">creators</span>
-              <div
-                className="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full place-content-center mt-8"
-              >
+              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full place-content-center mt-8">
                 {data.creators.map((creator, index) => (
                   <div
                     key={authors[index].id}
                     className="flex items-center justify-center md:px-20 mb-2 shadow-2xl hover:bg-[#459ED3]"
                   >
                     <div
-                      className="m-4 flex flex-col items-center w-full justify-center"
+                      className="m-4 flex flex-col items-center h-full mt-8 w-full justify-center"
                       key={creator.id}
                     >
                       <a href={creator.url} target="_blank">
@@ -60,7 +58,7 @@ const Info = () => {
                       <img
                         src={authors[index].image}
                         alt={authors[index].id}
-                        className="w-96 my-2 rounded-full"
+                        className="w-96 my-4 rounded-[50%] shadow-2xl bg-[#E6EFF8]"
                         loading="lazy"
                       />
                       <p className="text-justify h-full">
