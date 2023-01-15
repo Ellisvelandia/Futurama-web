@@ -11,24 +11,30 @@ const Home = () => {
     <PageTransition>
       <div className="relative without" onClick={() => setShowImage(false)}>
         <div
-          className="w-full h-full object-fill flex__center absolute inset-0 z-99"
+          className="w-full h-full object-fill flex__center absolute inset-0 z-99 cursor-pointer overflow-hidden"
           style={{ background: "rgba(0,0,0,0.65)" }}
         >
           <Video />
           {showImage && (
             <>
-              <img src={futurama} alt="logo"
-              className="top-5"
-              style={{ position: "absolute", zIndex: 2}}
+              <img
+                src={futurama}
+                alt="logo"
+                className="top-5"
+                style={{ position: "absolute", zIndex: 2 }}
               />
-            <img
-              src={poster}
-              alt="poster"
-              style={{ position: "absolute", zIndex: 1, objectFit: "fill", background:"no-repeat"}}
-              className="without w-full"
-            />
+              <img
+                src={poster}
+                alt="poster"
+                style={{
+                  position: "absolute",
+                  zIndex: 1,
+                  background: "no-repeat",
+                }}
+                className="without w-full md:object-fill lg:scale-100 scale-x-150"
+              />
             </>
-            )}
+          )}
         </div>
       </div>
     </PageTransition>
