@@ -12,10 +12,10 @@ const Header = () => {
         <img
           src={logo}
           alt="app logo"
-          className="w-[150px] h-28 p-4 invisible md:visible"
+          className="md:w-[150px] w-full h-28 md:p-4 invisible md:visible"
         />
       </div>
-      <ul className="flex flex-1 items-center w-full justify-center font-black text-white capitalize text-xl invisible md:visible drop-shadow-lg shadow-black">
+      <ul className="flex flex-1 items-center w-full justify-center md:p-8 font-black text-white capitalize text-xl invisible md:visible drop-shadow-lg shadow-black">
         <motion.li whileHover={{ scale: 1.1 }} className="md:mx-2">
           <Link to="/" className="hover:text-[#459ED3]">
             Home
