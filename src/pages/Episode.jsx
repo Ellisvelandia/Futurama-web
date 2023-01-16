@@ -36,6 +36,7 @@ const Episode = () => {
                   src={episodeposter}
                   alt="episodeposter"
                   className="rounded"
+                  loading="lazy"
                 />
                 <p className="text-justify text-md mb-1 mt-2 pb-4">{desc}</p>
                 <div className="absolute bottom-0 left-0 right-0 p-4">
