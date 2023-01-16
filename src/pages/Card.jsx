@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { motion, useTransform, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 
 const widthAnimation = {
   initial: { width: 0.8 },
@@ -9,11 +9,6 @@ const widthAnimation = {
 };
 
 const Card = () => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [30, -30]);
-  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
-
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 
@@ -41,15 +36,8 @@ const Card = () => {
         animate="animate"
         exit="exit"
         className="grid place-content-center without media md:p-12"
-        style={{ perspective: 10000 }}
       >
-        <motion.div
-          style={{ x, y, rotateX, rotateY, z: 10 }}
-          drag
-          dragElastic={0.18}
-          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          className="grid xl:w-[1100px] grid-cols-1 h-full md:grid-cols-2 place-items-center md:px-8 shadow p-4 rounded m-4 hover:bg-[#459ED3]"
-        >
+        <div className="grid xl:w-[1100px] grid-cols-1 h-full md:grid-cols-2 place-items-center md:px-8 shadow rounded m-4 hover:bg-[#459ED3]">
           <div className="w-full flex h-[400px] justify-center mt-4">
             {character.images && (
               <motion.img
@@ -87,7 +75,7 @@ const Card = () => {
           >
             &larr; Back
           </Link>
-        </motion.div>
+        </div>
       </motion.section>
     </>
   );
