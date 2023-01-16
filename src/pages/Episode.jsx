@@ -17,7 +17,6 @@ const Episode = () => {
     getCast();
   }, []);
 
-  console.log(episodes);
   return (
     <PageTransition>
       <>
