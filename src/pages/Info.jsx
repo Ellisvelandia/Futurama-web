@@ -33,7 +33,7 @@ const Info = () => {
               <img
                 src={poster}
                 alt="posterinfo"
-                className="md:-mt-6 md:-mb-8 my-4 w-full px-2 md:px-20 md:pt-20"
+                className="md:-mt-6 md:-mb-8 my-4 w-full px-2 md:px-20 md:pt-20 lg:h-[650px] rounded-3xl"
                 loading="lazy"
               />
               <p className="md:object-fill object-contain md:-mt-6 md:-mb-8 my-4 px-2 md:p-20 w-full text-justify -h-56">
@@ -49,7 +49,7 @@ const Info = () => {
                     className="flex items-center justify-center md:px-20 mb-2 shadow-2xl hover:bg-[#459ED3]"
                   >
                     <div
-                      className="m-4 flex flex-col items-center h-full mt-8 w-full justify-center"
+                      className="m-4 flex flex-col items-center font-black h-full mt-8 w-full justify-center"
                       key={creator.id}
                     >
                       <a href={creator.url} target="_blank">

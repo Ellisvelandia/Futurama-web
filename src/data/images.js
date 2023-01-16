@@ -12,5 +12,4 @@ export const authors = [
     image: matt,
     description: "Matthew Abram Groening is an American cartoonist, writer, producer, and animator. He is the creator of the comic strip Life in Hell and the television series The Simpsons & Futurama."
   },
- 
 ]

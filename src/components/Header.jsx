@@ -7,37 +7,46 @@ import { motion } from "framer-motion";
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <nav className="sticky top-0 w-full h-20 flex justify-between items-center px-4 py-4 shadow-md z-10 overflow-hidden mx-auto">
-      <div className="flex justify-end w-full 2xl:visible">
+    <nav className="sticky top-0 w-full h-20 flex justify-between items-center px-4 py-4 shadow-md z-10 mx-auto">
+      <div className="flex justify-start w-full 2xl:visible">
         <img
           src={logo}
           alt="app logo"
           className="w-[150px] h-28 p-4 invisible md:visible"
         />
       </div>
-      <ul className="flex flex-1 items-center w-full justify-end font-black text-white capitalize text-xl invisible md:visible drop-shadow-lg shadow-black">
-        <motion.li whileHover={{ scale: 1.1 }} className="mx-2">
+      <ul className="flex flex-1 items-center w-full justify-center font-black text-white capitalize text-xl invisible md:visible drop-shadow-lg shadow-black">
+        <motion.li whileHover={{ scale: 1.1 }} className="md:mx-2">
           <Link to="/" className="hover:text-[#459ED3]">
             Home
           </Link>
         </motion.li>
-        <motion.li className="mx-2" whileHover={{ scale: 1.1 }}>
+        <motion.li className="md:mx-2" whileHover={{ scale: 1.1 }}>
           <Link to="/info" className="hover:text-[#459ED3]">
             synopsis
           </Link>
         </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }} className="mx-2">
+        <motion.li whileHover={{ scale: 1.1 }} className="md:mx-2">
           <Link to="/list" className="hover:text-[#459ED3]">
             Characters
           </Link>
         </motion.li>
+        <motion.li whileHover={{ scale: 1.1 }} className="md:mx-2">
+          <Link to="/episode" className="hover:text-[#459ED3]">
+            Episodes
+          </Link>
+        </motion.li>
       </ul>
       <div className="md:hidden">
-        <img src={logo} alt="" className="absolute left-0 top-0 w-24 h-20" />
+        <img
+          src={logo}
+          alt="logo"
+          className="absolute left-0 top-0 w-24 h-20"
+        />
         <GiHamburgerMenu
           color="#fff"
           fontSize={27}
-          className="cursor-pointer"
+          className="cursor-pointer mx-auto"
           onClick={() => setToggleMenu(!toggleMenu)}
         />
         {toggleMenu && (
@@ -72,6 +81,14 @@ const Header = () => {
                   className="hover:text-[#459ED3] cursor-pointer"
                 >
                   Characters
+                </Link>
+              </li>
+              <li className="mx-2">
+                <Link
+                  to="/episode"
+                  className="hover:text-[#459ED3] cursor-pointer"
+                >
+                  Episodes
                 </Link>
               </li>
             </ul>

@@ -18,7 +18,7 @@ const ListCharacter = () => {
 
   return (
     <PageTransition>
-      <ListCard spaces={spaces} />;
+      <ListCard spaces={spaces} />
     </PageTransition>
   );
 };
