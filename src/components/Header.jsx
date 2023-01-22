@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <nav className="sticky top-0 w-full h-20 flex justify-between items-center px-4 py-4 shadow-md z-10 mx-auto">
+    <nav className="sticky top-0 w-full h-20 flex justify-between items-center px-2 py-2 shadow-md z-10 mx-auto">
       <div className="flex justify-start w-full 2xl:visible">
         <img
           src={logo}

@@ -19,7 +19,7 @@ const Episode = () => {
 
   return (
     <PageTransition>
-      <VideoCard episodes={episodes} />
+      <VideoCard episodes={episodes} key={episodes.id} />
     </PageTransition>
   );
 };

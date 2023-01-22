@@ -18,7 +18,7 @@ const Info = () => {
   }, []);
   return (
     <PageTransition>
-      <div className="relative w-full flex justify-center mt-8 snap-both">
+      <div className="relative w-full flex justify-center mt-8 snap-both bg-body textShadows">
         {info.map((data) => {
           return (
             <div
@@ -26,7 +26,7 @@ const Info = () => {
               className="w-full flex flex-col justify-center align-center m-4 text-white font-black text-xl"
             >
               <h1>
-                <span className="text-white font-black md:text-7xl text-4xl text-center ">
+                <span className="text-white font-black md:text-7xl text-5xl text-center ">
                   synopsis
                 </span>
               </h1>
@@ -36,7 +36,7 @@ const Info = () => {
                 className="md:-mt-6 md:-mb-8 my-4 w-full px-2 md:px-20 md:pt-20 lg:h-[650px] rounded-3xl"
                 loading="lazy"
               />
-              <p className="md:object-fill object-contain md:-mt-6 md:-mb-8 my-4 px-2 md:p-20 w-full text-justify -h-56">
+              <p className="md:object-fill object-contain md:-mt-6 md:-mb-8 my-4 px-2 md:p-20 w-full text-justify text-2xl -h-56">
                 {data.synopsis}
               </p>
               <span>yearsAired: {data.yearsAired}</span>
@@ -49,7 +49,7 @@ const Info = () => {
                     className="flex items-center justify-center md:px-20 mb-2 shadow-2xl hover:bg-[#459ED3]"
                   >
                     <div
-                      className="m-4 flex flex-col items-center font-black h-full mt-8 w-full justify-center"
+                      className="m-4 flex flex-col text-2xl items-center font-black h-full mt-8 w-full justify-center"
                       key={creator.id}
                     >
                       <a href={creator.url} target="_blank">
