@@ -12,6 +12,10 @@ body {
   font-family: "Playfair Display", serif;
 }
 
+.hidden {
+  display: none;
+}
+
 .flex__center {
   display: flex;
   justify-content: center;

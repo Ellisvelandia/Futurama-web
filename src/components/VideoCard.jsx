@@ -4,8 +4,10 @@ import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import { FiPlay } from "react-icons/fi";
 import TextTruncate from "react-text-truncate";
+import { useState } from "react";
 
 const VideoCard = ({ episodes }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div
       className="w-full mx-auto bg-body textShadows"
@@ -13,7 +15,7 @@ const VideoCard = ({ episodes }) => {
     >
       <Carousel
         showThumbs={false}
-        autoPlay={true}
+        autoPlay={false}
         transitionTime={6}
         infiniteLoop={true}
         showStatus={false}
@@ -34,13 +36,18 @@ const VideoCard = ({ episodes }) => {
                 Episode-{episode.title}
                 <span>{episode.number}</span>
               </div>
-              <div className="lg:text-3xl text-xl my-2 md:text-left text-justify text-md textShadows md:mx-0 mx-4">
+              <div className="md:text-3xl text-base my-2 md:text-left text-justify textShadows md:mx-0 mx-4">
                 <TextTruncate
-                  line={1}
+                  line={2}
                   element="span"
-                  truncateText="…"
+                  truncateText={isExpanded ? "..less" : " ...more"}
                   text={episode.desc}
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="cursor-pointer"
                 />
+                <div className={`text-desc ${isExpanded ? "" : "hidden"}`}>
+                  {episode.desc}
+                </div>
               </div>
               <div className="md:w-1/2 w-full flex justify-center md:text-left md:justify-start text-justify  text-md mb-1 md:text-lg font-semibold">
                 Writers: {episode.writers}
