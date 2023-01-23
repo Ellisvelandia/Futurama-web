@@ -11,7 +11,7 @@ const Episode = () => {
       const res = await axios.get(
         "https://api.sampleapis.com/futurama/episodes"
       );
-      setEpisodes(res.data);
+      setEpisodes(res.data.slice(0, 20));
     };
 
     getCast();

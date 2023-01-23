@@ -15,8 +15,8 @@ const VideoCard = ({ episodes }) => {
     >
       <Carousel
         showThumbs={false}
-        autoPlay={false}
-        transitionTime={6}
+        autoPlay={true}
+        transitionTime={4}
         infiniteLoop={true}
         showStatus={false}
         className="w-full"
